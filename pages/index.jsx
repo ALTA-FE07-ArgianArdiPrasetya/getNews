@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import CardNews from "../components/CardNews";
 import { useRouter } from "next/router";
+import NavigationBar from "../components/NavigationBar";
 
 export const getServerSideProps = async () => {
   const response = await axios.get(
@@ -23,7 +24,7 @@ const ServerSideRendering = ({ news }) => {
   const router = useRouter();
 
   const MoreDetails = (item) => {
-    Router.push({
+    router.push({
       pathname: `${item.author}`,
       query: {
         title: item.title,
@@ -46,16 +47,21 @@ const ServerSideRendering = ({ news }) => {
         </Head>
 
         <main>
-          {news.map((item, index) => (
-            <CardNews
-              key={index}
-              author={item.author}
-              img={item.imageUrl}
-              title={item.title}
-              date={item.date}
-              onClick={() => ReadMore(item)}
-            />
-          ))}
+          <div className="mb-5">
+            <NavigationBar />
+          </div>
+          <div className="marginTop">
+            {news.map((item, index) => (
+              <CardNews
+                key={index}
+                author={item.author}
+                img={item.imageUrl}
+                title={item.title}
+                date={item.date}
+                onClick={() => MoreDetails(item)}
+              />
+            ))}
+          </div>
         </main>
 
         <footer className={styles.footer}>
