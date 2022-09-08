@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-const CardNews = ({ author, img, title, date }) => {
+const CardNews = ({ author, img, title, date, onClick }) => {
   return (
     <>
       <div className="px-3 px-sm-3 px-lg-0">
@@ -20,7 +20,7 @@ const CardNews = ({ author, img, title, date }) => {
             <p className=" "> Author: {author} </p>
             <p>Publish on {date}</p>
             <div className="w-100 text-end">
-              <button className="details " onClick={() => onUpdate(dataInput)}>
+              <button className="details " onClick={onClick}>
                 More Details
               </button>
             </div>
