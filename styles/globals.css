@@ -62,3 +62,7 @@ button.details {
   cursor: pointer;
   background: blue;
 }
+
+.marginTop {
+  margin-top: 100px;
+}
