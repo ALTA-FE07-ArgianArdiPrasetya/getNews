@@ -15,7 +15,7 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
@@ -23,4 +23,42 @@ a {
     color: white;
     background: black;
   }
+} */
+
+.post {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  max-width: 800px !important;
+  padding: 10px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.img-thumb {
+  width: 200px;
+  height: 150px;
+  margin-right: 20px;
+}
+
+.img-thumb img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+
+button.details {
+  padding: 2px 10px;
+  background: #8bc34a;
+  color: white;
+  border-radius: 10px;
+  outline: none;
+  margin-top: 18px;
+  margin-right: 10px;
+  border: solid #8bc34a;
+}
+
+.details:hover {
+  cursor: pointer;
+  background: blue;
 }
